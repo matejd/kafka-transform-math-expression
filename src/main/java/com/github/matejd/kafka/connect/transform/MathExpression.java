@@ -141,7 +141,7 @@ public abstract class MathExpression<R extends ConnectRecord<R>> implements Tran
         Expression exp = new Expression(expression);
         List<String> variables = exp.getUsedVariables();
         for (String variable : variables) {
-            exp.with(variable, value.getString(variable));
+            exp.with(variable, value.get(variable).toString());
         }
 
         BigDecimal result = exp.eval();
